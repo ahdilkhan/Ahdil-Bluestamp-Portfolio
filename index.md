@@ -1,6 +1,5 @@
-# Project Name Here
-Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!
-
+Optical Character Recognition with Raspberry Pi
+For my optical character recognition project, I utilized a Raspberry Pi + PiCamera to develop an efficent device capable of converting an image of text into machine-readable text format. For instance, if you were to scan a receipt, your computer saves the scan as an image file and then uses OCR technology to read the text. This technology is especially useful for self-driving cars since it is able to read number plates and road signs.
 You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
 ```HTML 
 <!--- This is an HTML comment in Markdown -->
@@ -47,11 +46,8 @@ For your second milestone, explain what you've worked on since your previous mil
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For your first milestone, describe what your project is and how you plan to build it. You can include:
-- An explanation about the different components of your project and how they will all integrate together
-- Technical progress you've made so far
-- Challenges you're facing and solving in your future milestones
-- What your plan is to complete your project
+
+For my first milestone, I set up the hardware components of my Raspberry Pi such as the case, USB wires and power cable connecting to the PI. Problems I ran into while doing this was setting up the fan to make sure the heatsinks on the motherboard don't overheat. I wasn't sure how/where to set up the fan in the Raspberry Pi but through youtube tutorials, I was able to figure out how to connect it and have it start working. After the hardware setup, I was able to flash the SD card with the Raspberry Pi OS and wifi configuration. Then, I was able to remotely connect the Raspberry Pi through SSH and with the connection via VNC viewer, we did not need a keyboard or mouse connection. Originally, I was not able to connect through VNC viewer due to a error that said connection refused. I watched a youtube tutorial that mentioned that you have to enable VNC server on the Raspberry Pi before the VNC viewer connection. Lastly, I used VS code to write a small python script to test if I can push the code into Raspberry Pi which worked successfully. My next steps in completing the project is getting the PiCamera set up as well as get to the begenning stages of setting up the OCR software. 
 
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
