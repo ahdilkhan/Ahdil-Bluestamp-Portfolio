@@ -52,18 +52,76 @@ Here's where you'll put images of your schematics. [Tinkercad](https://www.tinke
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
-```c++
-void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  Serial.println("Hello World!");
-}
+import cv2
+import pytesseract
+from pytesseract import Output
+from picamera2 import MappedArray, Picamera2, Preview
+from espeak import espeak
+from time import sleep
+from openai import OpenAI
+import os
+ 
+#cap = cv2.VideoCapture(0)
+#cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
+picam2 = Picamera2()
+picam2.configure(picam2.create_preview_configuration({"size": (1024, 768)}))
+picam2.start_preview(Preview.QTGL)
+picam2.start()
+ 
+i = 0
+client = OpenAI(
+    # This is the default and can be omitted
+    
+)
 
-void loop() {
-  // put your main code here, to run repeatedly:
+openai = OpenAI()
 
-}
-```
+
+while True:
+    #ret, frame = cap.read() # from the tutorial but outdated
+    frame = picam2.capture_array()
+ 
+    d = pytesseract.image_to_data(frame, output_type=Output.DICT)
+    n_boxes = len(d['text'])
+    #print(n_boxes)
+    for i in range(n_boxes):
+        if int(d['conf'][i]) > 60:
+            (text, x, y, w, h) = (d['text'][i], d['left'][i], d['top'][i], d['width'][i], d['height'][i])
+            # don't show empty text
+            if text and text.strip() != "":
+                frame = cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+                frame = cv2.putText(frame, text, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 0, 255), 3)
+                cv2.imwrite("/home/ahdilkhan/Documents/ocr"+str(i)+".png", frame) # exact file path will vary by user
+                i += 1
+                print(text)
+                
+              
+                espeak.set_voice('english')
+                espeak.synth(text)
+                while espeak.is_playing():
+        # espeak is asynchronous, so wait politely until it's finished
+                    sleep(0.25)
+
+                prompt = text
+                model = "dall-e-2"
+                
+    # Generate an image based on the prompt
+                response = openai.images.generate(prompt=prompt, model=model, size = "256x256", quality = 'standard', n = 1)
+
+    # Prints response containing a URL link to image
+                print(response)
+
+ 
+    # Display the resulting frame
+    cv2.imshow('frame', frame) # only works for VNC Viewer
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+ 
+# cap.release() # from the tutorial but outdated
+cv2.destroyAllWindows()
+
+
+
 
 # Bill of Materials
 Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
@@ -72,7 +130,7 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 | Raspberry Pi4 Starter Kit | Used to run the OCR part of the project | $84.99 | <a href="https://www.amazon.com/Vemico-Raspberry-Starter-Heatsinks-Screwdriver/dp/B09QGZ94M8/ref=sr_1_20?crid=3EO43F1FEOV0O&dib=eyJ2IjoiMSJ9.ualQ11OTmi8CjjOvKHbGSeoxaNIDkPpfJZtZyzHol1FvvEglqiwyyx0fx51TZiZ1aBaberSc_J42HaMFrKc4G4wzNZJZEEpXeUe5uPFLGOfeZg1JiJOFIRBWErdjcMSJmt9OiXh3fiaEklJDqjCH8YliLFrOMz2gDd9N61tXfyLELptXi2DxstQVgqAxXv9vJnZG8mc1uPn3ogYVtajj4NEvfs_J7KSsaUplZk2LAkNdh8C7VZAVCj9KGMicav_2LQeL3moiJ-zNLr78csIQdysoo0AdWn9HClXObBEGA2A.R84P9iUHYtjBbieyHy8tFMnaqBUBiYhKHI1MA9uJP1A&dib_tag=se&keywords=raspberry%2Bpi%2Bkit&qid=1716420057&s=electronics&sprefix=raspberry%2Bpi%2Bki%2Celectronics%2C105&sr=1-20&th=1"> Link </a> |
 
-| Ardu PiCamera | To take pictures and detect the text | $6.99 | <a href="https://www.amazon.com/Arducam-Megapixels-Sensor-OV5647-Raspberry/dp/B012V1HEP4/ref=asc_df_B012V1HEP4/?tag=hyprod-20&linkCode=df0&hvadid=693620629591&hvpos=&hvnetw=g&hvrand=15006871956907933718&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032043&hvtargid=pla-820020083673&mcid=75fa5b0480f739c29fa68a28d965eee9&gad_source=1&th=1"> Link </a> 
+| Ardu PiCamera | To take pictures and detect the text | $6.99 | <a href="https://www.amazon.com/Arducam-Megapixels-Sensor-OV5647-Raspberry/dp/B012V1HEP4/ref=asc_df_B012V1HEP4/?tag=hyprod-20&linkCode=df0&hvadid=693620629591&hvpos=&hvnetw=g&hvrand=15006871956907933718&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032043&hvtargid=pla-820020083673&mcid=75fa5b0480f739c29fa68a28d965eee9&gad_source=1&th=1"> Link </a> |
 
 
 # Other Resources/Examples
