@@ -35,11 +35,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1VhNpJ6V-xc?si=ig2Elgns4MIzpBMB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone 
+Hi my name is Ahdil Khan and this is my milestone 2 video. For my milestone 2, I was able to set up my Ardu Raspberry PiCamera that was shipped to me and be able to remotely connect it to it using OpenCV and running a few commands/code to get it up and running. Then, I used the Picamera 2 library to process images which required me to use code to write an image from the pi camera to the folder which would then be able to be seen through selecting it in the VNC viewer. This worked successfully as I was able to see the area around me through the PiCamera. One issue I ran into was that I wasn’t sure how to get the camera display on the laptop but with a few tutorials on youtube, I learned that I had to run the code on vscode and then run a few commands on the VNC viewer terminal to actually connect back to that code. Another issue I ran into was that my camera would shut off after a couple seconds and I wasn’t sure why. After help from my instructor and looking back at the code, I figured out that I needed to change the sleep time of the camera so it stays on for longer. My next step in the process was for my PI to recognize text in live images via the PiCamera. To accomplish this, I created a new file with sample code that my instructor provided me as well as various commands on the terminal which did the trick and the camera was able to recognize texts. For my milestone 3, I am going to use a speaker and my current raspberry pi to convert the recognized text into verbal speech. Thank you. 
 
 # First Milestone
 
