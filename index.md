@@ -1,10 +1,6 @@
 
 For my optical character recognition project, I utilized a Raspberry Pi + PiCamera to develop an efficent device capable of converting an image of text into machine-readable text format. For instance, if you were to scan a receipt, your computer saves the scan as an image file and then uses OCR technology to read the text. This technology is especially useful for self-driving cars since it is able to read number plates and road signs.
-You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
-```HTML 
-<!--- This is an HTML comment in Markdown -->
-<!--- Anything between these symbols will not render on the published site -->
-```
+
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
