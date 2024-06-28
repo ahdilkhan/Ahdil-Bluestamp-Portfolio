@@ -17,7 +17,11 @@ For my optical character recognition project, I utilized a Raspberry Pi + PiCame
 <iframe width="560" height="315" src="https://www.youtube.com/embed/SR7ORd67jkE?si=JdpPDmQDnqgwwdRc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
-Hi my name is Ahdil and this is my milestone 3 video. For my milestone 3, I was able to make two modifications to my base project to make it have multiple features. The first modification I did was that I plugged in a speaker to my raspberry pi which was able to say out loud each word that was detected. The first issue I ran into while trying to do this was that the volume on the speaker was very low so after watching a few youtube videos, I was able to figure out that you can change the volume through VNC viewer which is what I did. The second modification I did was that I added an image generation feature which was able to create a pixelated image of the detected text. How it worked was when it prints the detected text on the screen, the algorithm would print a URL of the image and you can copy paste that URL on google to see the image. One issue I ran into while trying to do this was that I needed an efficient way to be able to generate the images so with the help of my instructor, I was able to get an Open AI API key which allowed the algorithm to run smoothly. Thank you.   
+Hello, my name is Ahdil, and this is my Milestone 3 video. For this milestone, I enhanced my base project by adding two significant features.
+
+First, I integrated a speaker into my Raspberry Pi, enabling it to audibly read out each detected word. Initially, I encountered an issue with the speaker's low volume. After watching several YouTube tutorials, I learned that I could adjust the volume using VNC Viewer, which resolved the problem.
+
+The second enhancement was adding an image generation feature that creates a pixelated image of the detected text. When the text is displayed on the screen, the algorithm also generates a URL for the corresponding image. You can then copy and paste this URL into Google to view the image. A challenge I faced here was finding an efficient way to generate the images. With my instructor's help, I obtained an OpenAI API key, which allowed the algorithm to run smoothly.   
 
 
 
