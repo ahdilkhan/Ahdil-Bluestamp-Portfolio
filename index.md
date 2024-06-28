@@ -108,8 +108,7 @@ while True:
     cv2.imshow('frame', frame) # only works for VNC Viewer
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
- 
-# cap.release() # from the tutorial but outdated
+
 cv2.destroyAllWindows()
 
 
