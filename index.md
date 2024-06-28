@@ -14,14 +14,10 @@ For my optical character recognition project, I utilized a Raspberry Pi + PiCame
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SR7ORd67jkE?si=JdpPDmQDnqgwwdRc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
+Hi my name is Ahdil and this is my milestone 3 video. For my milestone 3, I was able to make two modifications to my base project to make it have multiple features. The first modification I did was that I plugged in a speaker to my raspberry pi which was able to say out loud each word that was detected. The first issue I ran into while trying to do this was that the volume on the speaker was very low so after watching a few youtube videos, I was able to figure out that you can change the volume through VNC viewer which is what I did. The second modification I did was that I added an image generation feature which was able to create a pixelated image of the detected text. How it worked was when it prints the detected text on the screen, the algorithm would print a URL of the image and you can copy paste that URL on google to see the image. One issue I ran into while trying to do this was that I needed an efficient way to be able to generate the images so with the help of my instructor, I was able to get an Open AI API key which allowed the algorithm to run smoothly. Thank you.   
 
 
 
