@@ -44,7 +44,8 @@ Here's where you'll put images of your schematics. [Tinkercad](https://www.tinke
 # Code
 
 
-```python import cv2
+```python
+import cv2
 import pytesseract
 from pytesseract import Output
 from picamera2 import MappedArray, Picamera2, Preview
